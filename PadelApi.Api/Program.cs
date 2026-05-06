@@ -58,11 +58,8 @@ using (var scope = app.Services.CreateScope())
 app.UseMiddleware<ExceptionMiddleware>();
 app.UseCors("Frontend");
 
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
-
+// Swagger disponible siempre (podés restringirlo después)
+app.UseSwagger();
+app.UseSwaggerUI();
 app.MapControllers();
 app.Run();
