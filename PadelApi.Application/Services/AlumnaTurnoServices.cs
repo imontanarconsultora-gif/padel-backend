@@ -103,6 +103,7 @@ public class TurnoService(ITurnoRepository turnoRepo, IReservaRepository reserva
             DiaSemana = req.DiaSemana,
             Hora = req.Hora,
             Categoria = req.Categoria,
+            Genero = req.Genero,
             MaxAlumnos = req.MaxAlumnos,
             Activo = req.Activo
         };
@@ -118,6 +119,7 @@ public class TurnoService(ITurnoRepository turnoRepo, IReservaRepository reserva
         turno.DiaSemana = req.DiaSemana;
         turno.Hora = req.Hora;
         turno.Categoria = req.Categoria;
+        turno.Genero = req.Genero;
         turno.MaxAlumnos = req.MaxAlumnos;
         turno.Activo = req.Activo;
 
@@ -132,5 +134,5 @@ public class TurnoService(ITurnoRepository turnoRepo, IReservaRepository reserva
     }
 
     private static TurnoDto ToDto(Turno t, int cuposLibres) =>
-        new(t.Id, t.Nombre, t.DiaSemana, t.Hora, t.Categoria, t.MaxAlumnos, t.Activo, cuposLibres);
+        new(t.Id, t.Nombre, t.DiaSemana, t.Hora, t.Categoria, t.Genero, t.MaxAlumnos, t.Activo, cuposLibres);
 }

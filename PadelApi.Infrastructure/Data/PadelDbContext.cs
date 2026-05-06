@@ -29,6 +29,7 @@ public class PadelDbContext(DbContextOptions<PadelDbContext> options) : DbContex
             e.Property(t => t.Nombre).HasMaxLength(100).IsRequired();
             e.Property(t => t.Categoria).HasMaxLength(50).IsRequired();
             e.Property(t => t.Hora).HasColumnType("time");
+            e.Property(t => t.Genero).HasConversion<string>().HasMaxLength(20);
         });
 
         // ── Reserva ───────────────────────────────────────────────

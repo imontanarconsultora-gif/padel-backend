@@ -28,6 +28,7 @@ public record CrearTurnoRequest(
     int DiaSemana,
     TimeOnly Hora,
     string Categoria,
+    PadelApi.Domain.Entities.Genero Genero,
     int MaxAlumnos = 4,
     bool Activo = true
 );
@@ -37,6 +38,7 @@ public record ActualizarTurnoRequest(
     int DiaSemana,
     TimeOnly Hora,
     string Categoria,
+    PadelApi.Domain.Entities.Genero Genero,
     int MaxAlumnos,
     bool Activo
 );
@@ -83,6 +85,7 @@ public record TurnoDto(
     int DiaSemana,
     TimeOnly Hora,
     string Categoria,
+    PadelApi.Domain.Entities.Genero Genero,
     int MaxAlumnos,
     bool Activo,
     int CuposLibres
