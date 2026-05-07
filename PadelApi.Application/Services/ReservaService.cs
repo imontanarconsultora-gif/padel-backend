@@ -39,11 +39,7 @@ public class ReservaService(
         var turno = await turnoRepo.GetByIdAsync(req.TurnoId)
             ?? throw new PadelException("Turno no encontrado.", "turno_invalido", 404);
 
-        // 5. Verificar categoría
-        if (turno.Categoria != alumno.Categoria)
-            throw new CategoriaIncompatibleException(turno.Categoria, alumno.Categoria);
-
-        // 6. Verificar que no tenga reserva ya
+        // 5. Verificar que no tenga reserva ya
         if (await reservaRepo.ExisteReservaAsync(alumno.Id, turno.Id, req.FechaClase))
             throw new YaReservadaException();
 
