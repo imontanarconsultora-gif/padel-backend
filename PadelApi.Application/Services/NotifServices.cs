@@ -78,7 +78,7 @@ public class TwilioWhatsAppService : IWhatsAppService
         TimeOnly hora, string categoria, string token)
     {
         var fechaStr = fecha.ToString("dddd d 'de' MMMM", new CultureInfo("es-AR"));
-        var link = $"{_baseUrl}/cancelar.html?token={token}";
+        var link = $"{_baseUrl}/Cancelar?token={token}";
         var msg = $"Hola {nombre}! ✅\n\nTu turno de pádel quedó confirmado:\n📅 {fechaStr}\n⏰ {hora:HH:mm}\n🏷 Categoría: {categoria}\n\nPara cancelar (hasta 2hs antes):\n🔗 {link}\n\n¡Nos vemos en la cancha! 🎾";
         return EnviarAsync(tel, msg);
     }
@@ -94,7 +94,7 @@ public class TwilioWhatsAppService : IWhatsAppService
         TimeOnly hora, string categoria, string token)
     {
         var fechaStr = fecha.ToString("d 'de' MMMM", new CultureInfo("es-AR"));
-        var link = $"{_baseUrl}/cancelar.html?token={token}";
+        var link = $"{_baseUrl}/Cancelar?token={token}";
         var msg = $"¡Hola {nombre}! ⏰\n\nTe recordamos que en 2 horas tenés clase de pádel:\n📅 Hoy {fechaStr}\n⏰ {hora:HH:mm}\n🏷 {categoria}\n\n¿No podés venir? Cancelá acá:\n🔗 {link}\n\n¡Hasta pronto! 🎾";
         return EnviarAsync(tel, msg);
     }
