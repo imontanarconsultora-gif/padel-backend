@@ -25,7 +25,7 @@ builder.Services.AddScoped<ITurnoService,      TurnoService>();
 builder.Services.AddScoped<IRecordatorioService, RecordatorioService>();
 
 // ── WHATSAPP ──────────────────────────────────────────────────────
-builder.Services.AddHttpClient<IWhatsAppService, CallMeBotWhatsAppService>();
+builder.Services.AddSingleton<IWhatsAppService, TwilioWhatsAppService>();
 
 // ── CORS (permite llamadas desde Netlify y admin.html) ────────────
 builder.Services.AddCors(opt => opt.AddPolicy("Frontend", p =>
